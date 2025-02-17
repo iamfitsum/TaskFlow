@@ -3,6 +3,7 @@
 import Board from "@/components/Board";
 import List from "@/components/List";
 import ProjectHeader from "@/components/ProjectHeader";
+import Timeline from "@/components/Timeline";
 import { useState } from "react";
 
 type Props = {
@@ -25,6 +26,9 @@ const Project: React.FC<Props> = ({ params }: Props) => {
       )}
       {activeTab === "List" && (
         <List id={id} setIsModalNewTaskOpen={setIsModalNewTaskOpen} />
+      )}
+      {activeTab === "Timeline" && (
+        <Timeline id={id} setIsModalNewTaskOpen={setIsModalNewTaskOpen} />
       )}
     </div>
   );
