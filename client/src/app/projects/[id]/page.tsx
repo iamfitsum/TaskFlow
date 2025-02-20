@@ -2,6 +2,7 @@
 
 import Board from "@/components/Board";
 import List from "@/components/List";
+import ModalNewTask from "@/components/ModalNewTask";
 import ProjectHeader from "@/components/ProjectHeader";
 import Table from "@/components/Table";
 import Timeline from "@/components/Timeline";
@@ -20,7 +21,11 @@ const Project: React.FC<Props> = ({ params }: Props) => {
 
   return (
     <div>
-      {/* Modal New Task */}
+      <ModalNewTask
+        isOpen={isModalNewTaskOpen}
+        onClose={() => setIsModalNewTaskOpen(false)}
+        id={id}
+      />
       <ProjectHeader activeTab={activeTab} setActiveTab={setActiveTab} />
       {activeTab === "Board" && (
         <Board id={id} setIsModalNewTaskOpen={setIsModalNewTaskOpen} />
