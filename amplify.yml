@@ -10,7 +10,6 @@ applications:
             - pnpm install
         build:
           commands:
-            - cd client
             - pnpm run build
       artifacts:
         baseDirectory: client/.next
